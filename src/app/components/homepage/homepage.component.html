@@ -35,7 +35,7 @@
 
     </div>
     <div
-        class="h-full relative mx-auto max-w-md pl-16  px-6 sm:max-w-7xl sm:py-20 md:py-28 lg:px-8 lg:py-32 overflow-y-auto">
+        class="h-full relative mx-auto max-w-md  px-6 sm:max-w-7xl sm:py-20 md:py-28 lg:px-8 lg:py-32 overflow-y-auto">
         <div *ngIf="!showMore" class="md:ml-auto md:w-1/2 md:pl-10 ">
             <h2 class="text-lg font-semibold mt-2 text-gray-300">Interview Test</h2>
             <p class="mt-2 text-3xl font-bold tracking-tight text-white sm:text-2xl">Below are the tasks accomplised -
@@ -104,7 +104,7 @@
             </div>
 
             <!-- Not found if movie is null -->
-            <div *ngIf="check==null && !movieById">
+            <div *ngIf="check==null ">
                 <div class="flex justify-center pt-4">
                     <h5
                         class="mb-2 text-2xl font-semibold block bg-gradient-to-r from-teal-200 to-cyan-400 bg-clip-text pb-3 text-transparent sm:pb-5">
@@ -115,7 +115,7 @@
 
 
             <!-- Movie details by Id -->
-            <div *ngIf="movieById" class="mt-10 overflow-y-auto ">
+            <div *ngIf="movieById && check!=null" class="mt-10 overflow-y-auto ">
                 <div class="flex justify-center">
                     <div class="block max-w-sm mt-4 rounded-lg bg-white shadow-lg ">
                         <a href="#!" data-te-ripple-init data-te-ripple-color="light">
