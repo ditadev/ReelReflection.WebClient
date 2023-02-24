@@ -11,7 +11,6 @@ import { ApiService } from 'src/app/services/api.service';
 export class HomepageComponent {
 
   showMore: boolean = false;
-  toogleHistory: boolean = false;
   movieById: boolean = false;
   showHistory: number = 0;
   subscription?: Subscription;
@@ -63,12 +62,10 @@ export class HomepageComponent {
       .subscribe(
         response => {
           if (response) {
-            this.movies = response;
+            this.movies = response.reverse();
             console.log("History " + response);
           }
         });
-    this.toogleHistory = !this.toogleHistory;
-
   }
 
 
