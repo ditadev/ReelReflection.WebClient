@@ -28,6 +28,7 @@ test-results/
 *.angular
 /.angular
 
+
 # Icon must end with two \r
 Icon
 
