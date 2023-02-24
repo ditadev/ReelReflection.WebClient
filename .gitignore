@@ -23,6 +23,10 @@ test-results/
 .idea
 ./.idea
 *.idea
+.angular
+./.angular
+*.angular
+/.angular
 
 # Icon must end with two \r
 Icon
