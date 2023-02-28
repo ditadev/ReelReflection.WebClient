@@ -28,6 +28,10 @@ export class HomepageComponent implements OnDestroy {
     this.showMore = !this.showMore;
   }
 
+  viewTile() {
+    this.movieById = !this.movieById;
+  }
+
   searchMovie(): void {
     this.subscription = this.apiService
       .searchMovieByTitle(this.title)

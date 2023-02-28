@@ -118,7 +118,7 @@
                 <div class="flex justify-center">
                     <div class="block max-w-sm mt-4 rounded-lg bg-white shadow-lg ">
                         <a href="#!" data-te-ripple-init data-te-ripple-color="light">
-                            <img class="rounded-t-lg w-full " src={{movie.poster}} alt="" />
+                            <img (click)="viewTile()" class="rounded-t-lg w-full " src={{movie.poster}} alt="" />
                         </a>
                         <div class="dark:bg-cyan-800  p-6">
                             <h5 class="mb-2 text-2xl font-semibold text-neutral-800 dark:text-neutral-50">
