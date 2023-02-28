@@ -1,6 +1,6 @@
 <!-- Navigation bar -->
 <div
-    class=" pr-8 flex flex-row justify-between py-8 lg:flex h-20 lg:items-center lg:justify-between bg-gradient-to-r from-teal-500 to-cyan-900 text-white shadow  focus:outline-none focus:ring-3 focus:ring-cyan-900 focus:ring-offset-4 focus:ring-offset-gray-900  ">
+    class=" pr-8 flex flex-row justify-between py-8 lg:flex h-24 lg:items-center lg:justify-between bg-gradient-to-r from-teal-500 to-cyan-900 text-white shadow  focus:outline-none focus:ring-3 focus:ring-cyan-900 focus:ring-offset-4 focus:ring-offset-gray-900  ">
     <div class="min-w-0 flex-1">
         <div class="px-6 -pb-8 -pt-8 flex w-full items-center justify-between md:w-auto">
             <p class="text-3xl font-semibold text-gray-900">Reel Reflection</p>
@@ -114,7 +114,7 @@
 
 
             <!-- Movie details by Id -->
-            <div *ngIf="movieById && check!=null" class="mt-10 overflow-y-auto ">
+            <div *ngIf="movieById && check!=null" class="mt-10 overflow-y-auto scroll-smooth">
                 <div class="flex justify-center">
                     <div class="block max-w-sm mt-4 rounded-lg bg-white shadow-lg ">
                         <a href="#!" data-te-ripple-init data-te-ripple-color="light">
@@ -124,44 +124,81 @@
                             <h5 class="mb-2 text-2xl font-semibold text-neutral-800 dark:text-neutral-50">
                                 {{movie.title}}
                             </h5>
-                            <p class="mb-2 text-base text-neutral-600 dark:text-neutral-200">Plot: {{movie.plot}}
+                            <p class="mb-2 text-base font-bold text-neutral-600 dark:text-neutral-200">Plot:
+                                <span
+                                class="mb-2 text-base font-normal text-neutral-600 dark:text-neutral-200">{{movie.plot}}
+                                </span>
                             </p>
-                            <p class="mb-2 text-base text-neutral-600 dark:text-neutral-200">Rating: {{movie.rated}}
-                            </p>
-                            <p class="mb-2 text-base text-neutral-600 dark:text-neutral-200">Release Date:
-                                {{movie.released}}
-                            </p>
-                            <p class="mb-2 text-base text-neutral-600 dark:text-neutral-200">Movie Length:
-                                {{movie.runtime}}
-                            </p>
-                            <p class="mb-2 text-base text-neutral-600 dark:text-neutral-200">Genre: {{movie.genre}}
-                            </p>
-                            <p class="mb-2 text-base text-neutral-600 dark:text-neutral-200">Director:
-                                {{movie.director}}
-                            </p>
-                            <p class="mb-2 text-base text-neutral-600 dark:text-neutral-200">Writer: {{movie.writer}}
-                            </p>
-                            <p class="mb-2 text-base text-neutral-600 dark:text-neutral-200">Actor: {{movie.actors}}
-                            </p>
-                            <p class="mb-2 text-base text-neutral-600 dark:text-neutral-200">Language:
-                                {{movie.language}}
-                            </p>
-                            <p class="mb-2 text-base text-neutral-600 dark:text-neutral-200">Country: {{movie.country}}
-                            </p>
-                            <p class="mb-2 text-base text-neutral-600 dark:text-neutral-200">Awards: {{movie.awards}}
-                            </p>
-                            <p class="mb-2 text-base text-neutral-600 dark:text-neutral-200">Box Office:
-                                {{movie.boxOffice}}
-                            </p>
-                            <p class="mb-2 text-base text-neutral-600 dark:text-neutral-200">Rating:
-                                {{movie.imdbRating}}
-                            </p>
-                            <p class="mb-2 text-base text-neutral-600 dark:text-neutral-200">Production:
-                                {{movie.production}}
-                            </p>
-                            <p class="mb-2 text-base text-neutral-600 dark:text-neutral-200">Website:
-                                {{movie.website}}
-                            </p>
+                            <p class="mb-2 text-base font-bold text-neutral-600 dark:text-neutral-200">Rating:
+                                <span
+                                class="mb-2 text-base font-normal text-neutral-600 dark:text-neutral-200">{{movie.rated}}
+                                </span>
+                            </p>             
+                            <p class="mb-2 text-base font-bold text-neutral-600 dark:text-neutral-200">Release Date:
+                                <span
+                                class="mb-2 text-base font-normal text-neutral-600 dark:text-neutral-200">{{movie.released}}
+                                </span>
+                            </p>   
+                            <p class="mb-2 text-base font-bold text-neutral-600 dark:text-neutral-200">Movie Length:
+                                <span
+                                class="mb-2 text-base font-normal text-neutral-600 dark:text-neutral-200">{{movie.runtime}}
+                                </span>
+                            </p>   
+                            <p class="mb-2 text-base font-bold text-neutral-600 dark:text-neutral-200">Genre:
+                                <span
+                                class="mb-2 text-base font-normal text-neutral-600 dark:text-neutral-200">{{movie.genre}}
+                                </span>
+                            </p>   
+                            <p class="mb-2 text-base font-bold text-neutral-600 dark:text-neutral-200">Director:
+                                <span
+                                class="mb-2 text-base font-normal text-neutral-600 dark:text-neutral-200">{{movie.director}}
+                                </span>
+                            </p>   
+                            <p class="mb-2 text-base font-bold text-neutral-600 dark:text-neutral-200">Writer:
+                                <span
+                                class="mb-2 text-base font-normal text-neutral-600 dark:text-neutral-200">{{movie.writer}}
+                                </span>
+                            </p>   
+                            <p class="mb-2 text-base font-bold text-neutral-600 dark:text-neutral-200">Actors:
+                                <span
+                                class="mb-2 text-base font-normal text-neutral-600 dark:text-neutral-200">{{movie.actors}}
+                                </span>
+                            </p> 
+                            <p class="mb-2 text-base font-bold text-neutral-600 dark:text-neutral-200">Language:
+                                <span
+                                class="mb-2 text-base font-normal text-neutral-600 dark:text-neutral-200">{{movie.language}}
+                                </span>
+                            </p> 
+                            <p class="mb-2 text-base font-bold text-neutral-600 dark:text-neutral-200">Country:
+                                <span
+                                class="mb-2 text-base font-normal text-neutral-600 dark:text-neutral-200">{{movie.country}}
+                                </span>
+                            </p> 
+                            <p class="mb-2 text-base font-bold text-neutral-600 dark:text-neutral-200">Awards:
+                                <span
+                                class="mb-2 text-base font-normal text-neutral-600 dark:text-neutral-200">{{movie.awards}}
+                                </span>
+                            </p> 
+                            <p class="mb-2 text-base font-bold text-neutral-600 dark:text-neutral-200">Box Office:
+                                <span
+                                class="mb-2 text-base font-normal text-neutral-600 dark:text-neutral-200">{{movie.boxOffice}}
+                                </span>
+                            </p> 
+                            <p class="mb-2 text-base font-bold text-neutral-600 dark:text-neutral-200">Rating:
+                                <span
+                                class="mb-2 text-base font-normal text-neutral-600 dark:text-neutral-200">{{movie.imdbRating}}
+                                </span>
+                            </p> 
+                            <p class="mb-2 text-base font-bold text-neutral-600 dark:text-neutral-200">Production:
+                                <span
+                                class="mb-2 text-base font-normal text-neutral-600 dark:text-neutral-200">{{movie.production}}
+                                </span>
+                            </p> 
+                            <p class="mb-2 text-base font-bold text-neutral-600 dark:text-neutral-200">Website:
+                                <span
+                                class="mb-2 text-base font-normal text-neutral-600 dark:text-neutral-200">{{movie.website}}
+                                </span>
+                            </p> 
                         </div>
                     </div>
                 </div>
