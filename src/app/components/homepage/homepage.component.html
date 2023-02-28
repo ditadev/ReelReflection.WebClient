@@ -1,6 +1,6 @@
 <!-- Navigation bar -->
 <div
-    class=" pr-8 flex flex-row justify-between py-8 lg:flex h-24 lg:items-center lg:justify-between bg-gradient-to-r from-teal-500 to-cyan-900 text-white shadow  focus:outline-none focus:ring-3 focus:ring-cyan-900 focus:ring-offset-4 focus:ring-offset-gray-900  ">
+    class=" pr-8 flex flex-row justify-between py-8 lg:flex h-32 lg:items-center lg:justify-between bg-gradient-to-r from-teal-500 to-cyan-900 text-white shadow  focus:outline-none focus:ring-3 focus:ring-cyan-900 focus:ring-offset-4 focus:ring-offset-gray-900  ">
     <div class="min-w-0 flex-1">
         <div class="px-6 -pb-8 -pt-8 flex w-full items-center justify-between md:w-auto">
             <p class="text-3xl font-semibold text-gray-900">Reel Reflection</p>
@@ -8,7 +8,7 @@
         <div class="mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap sm:space-x-6">
         </div>
     </div>
-    <div class="-mt-5 flex lg:mt-0 lg:ml-4">
+    <div class="flex lg:mt-0 lg:ml-4">
         <span class="hidden sm:block">
             <button *ngIf="!showMore" (click)="show()" type="button"
                 class="inline-flex items-center rounded-md border border-gray-300 bg-white mr-2 px-4 py-2 text-lg font-medium text-gray-700 shadow-sm  hover:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 font-semibold">
@@ -18,7 +18,7 @@
 
         <div class="relative ml-3 sm:hidden">
             <button *ngIf="!showMore" (click)="show()" type="button"
-                class="inline-flex mt-4 items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-lg font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                class="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-lg font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                 id="mobile-menu-button" aria-expanded="false" aria-haspopup="true">
                 Get Started
             </button>
