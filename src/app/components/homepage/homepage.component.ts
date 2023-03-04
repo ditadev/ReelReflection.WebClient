@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { Subscription } from 'rxjs';
 import { Movie } from 'src/app/models/movie';
 import { ApiService } from 'src/app/services/api.service';
@@ -21,6 +22,7 @@ export class HomepageComponent implements OnDestroy {
 
   constructor(
     private apiService: ApiService,
+    private spinner: NgxSpinnerService
   ) { }
 
 
@@ -33,44 +35,72 @@ export class HomepageComponent implements OnDestroy {
   }
 
   searchMovie(): void {
+    this.spinner.show(); 
     this.subscription = this.apiService
       .searchMovieByTitle(this.title)
-      .subscribe(
-        response => {
+      .subscribe({
+        next: (response) => {
           if (response) {
             this.movie = response;
             console.log("By Search " + response);
             this.check = this.movie.title;
           }
-        });
+        },
+        error: (error) => {
+          this.spinner.hide(); 
+          console.error(error);
+        },
+        complete: () => {
+          this.spinner.hide(); 
+        }
+      });
     this.showHistory = 1;
     this.searchHistory();
   }
 
+
   getMovieById(): void {
-    this.subscription = this.apiService
-      .getMovieById(this.movie.imdbID)
-      .subscribe(
-        response => {
-          if (response) {
-            this.movie = response;
-            console.log("By Id " + response);
-          }
-        });
-    this.movieById = !this.movieById;
+    this.spinner.show(); 
+    this.subscription = this.apiService.getMovieById(this.movie.imdbID).subscribe({
+      next: (response) => {
+        if (response) {
+          this.movie = response;
+          console.log("By Id " + response);
+        }
+      },
+      error: (err) => {
+        console.log(err);
+      },
+      complete: () => {
+        this.spinner.hide(); 
+        this.movieById = !this.movieById;
+      },
+    });
   }
+  
 
   searchHistory(): void {
+    this.spinner.show(); 
     this.subscription = this.apiService
       .getSearchHistory()
-      .subscribe(
-        response => {
+      .subscribe({
+        next: (response) => {
           if (response) {
             this.movies = response.reverse();
             console.log("History " + response);
           }
-        });
+        },
+        error: (err) => {
+          console.log("Error: " + err);
+          this.spinner.hide(); 
+        },
+        complete: () => {
+          this.spinner.hide(); 
+        },
+      });
   }
+
+
 
 
   ngOnDestroy(): void {
